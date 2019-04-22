@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+http1.0
+一次请求后就断了
+再请求 再断开
+建立连接非常耗费时间
+响应头 Connection：keep-alive 保持连接
+
+HTTP/1.1
+官方：Connection：keep-alive
+前后端减少http请求 优化  减少请求数
+一个link多一次请求
+一个域名仅支持四个连接 每次只能同时请求四个资源
+(二级域名)www.baidu（主域名）
+
+减少http请求数的方法
+1.精灵图
+2.iconfont也是
+
+http2
+不用考虑优化 一个连接直接发送所有资源 还主动推送资源
+支持的连接数更多
+
+
+
+
+
+
+</body>
+</html>

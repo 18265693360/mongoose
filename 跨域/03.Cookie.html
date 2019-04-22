@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button id="btn">删除</button>
+
+</body>
+<script>
+    var btn = document.getElementById("btn");
+    //访问Cookie 浏览器上的Cookie
+    //Cookie是浏览器用来存储东西的地方 不同的浏览器 Cookie不一样
+    //console.log(document.cookie);
+    //制作Cookie
+    // document.cookie = "desc=i'm cookie"
+    // document.cookie = "today= it is happy day!"
+
+    //封装函数 拿到Cookie
+    function getCookie(){
+        let cookie = document.cookie;
+        let cookieArr = cookie.split(";");
+        let obj = {};
+        console.log(cookieArr);
+        for(var i=0; i<cookieArr.length;i++){
+            let arr = cookieArr[i].split("=");
+            obj[arr[0]] = arr[1]
+        }
+        return obj
+    }
+
+    console.log(getCookie());
+    //点语法获取Cookie
+
+    //set Cookie 键值对
+    function setCookie(key,value,time){
+        let date = new Date();
+        date.setSeconds(date.getSeconds() + time);
+        console.log(date);
+        let str = date.toUTCString();
+        document.cookie = `${key}=${value};expires=${str}`
+        //expires过期失效
+    }
+
+    //删除Cookie
+    function deleteCookie(key){
+        setCookie(key,null,-1);
+    }
+
+    setCookie("something","this is something",120);
+    btn.onclick = function(){
+        deleteCookie("something");
+    }
+    // setCookie('like','computergame',120)
+</script>
+</body>
+</html>

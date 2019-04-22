@@ -1,0 +1,14 @@
+hello http!
+express -e 生成
+npm install node-dev
+
+cannot fin module 就是未安装相应模块
+ npm install安装相应模块
+
+ localhost:3000/demo.txt 出现的（既服务器上实实在在存在的资源）就是静态资源
+
+ 动态资源：服务器上不存在的资源 需要计算才能得到的资源
+ {code: 200, data: 1551432037354}
+ code: 200
+ data: 1551432037354
+unix时间戳 动态资源
